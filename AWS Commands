@@ -1,1 +1,11 @@
 
+
+
+Go to putty --> enter ip address and go to SSH/Auth, now select private key and connect.
+
+>>sudo su
+>>yum update -y OR
+>>apt install yum
+--Some of the packages will start downloading throught the CLI.
+
+

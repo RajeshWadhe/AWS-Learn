@@ -1,3 +1,63 @@
+aws ec2 describe-instances 
+error at CLI
+
+aws --no-verify-ssl ec2 describe-instances
+
+
+NOW detach ec2 policy from account under IAM
+THEN  
+aws --no-verify-ssl ec2 describe-instances
+unauthorized access
+
+Make IAM-> users-> security_credential
+make it INACTIVE 
+now run command-->aws --no-verify-ssl ec2 describe-instances
+unable to validate the provided access credential
+
+For S3--->
+create BUCKET--> upload FILE
+add other aws account to access
+then chekc throug CLI
+--> aws --no-verify-ssl s3 ls s3://bucket-demo-9001 --recursive
+IT should display object
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html
+
+uptime.is
+
+FILE
+AWSCLI 64
+AWS-Java-sdk-1.11.
+
+
+java -cp "aws-java-sdk-1.11.451.jar;." s3upload sample789 
+
+To upload java file in bucket
+//javac -cp "lib/*;." s3upload.java    ---> compile
+//java -cp "lib/*;." s3upload bucket-demo-9001 s3upload.java
+
+
+https://www.ec2instances.info
+
+
+HeidiSQL-->
+root
+Database123
+
+
+DynamoDB
+create Java File In RDP--> text Dynamodb.java
+javac -cp "lib/*;." Dynamodb.java
+java -cp "lib/*;." Dynamodb
+
+https://cloudcraft.co
+
+http://www.haproxy.org/
+
+windows+R
+inetmgr ---> local host
+
+https://calculator.s3.amazonaws.com/index.html
 
 
 
@@ -7,5 +67,55 @@ Go to putty --> enter ip address and go to SSH/Auth, now select private key and 
 >>yum update -y OR
 >>apt install yum
 --Some of the packages will start downloading throught the CLI.
+
+*************************************************************************************************************************
+*************************************************************************************************************************
+How to install graphical Desktop in ec2 instance ubuntu14.04 (Linux) and access from windows pc:-->
+
+https://www.youtube.com/watch?v=ljvgwmJCUjw
+
+
+How to install graphical desktop in ec2 instance ubuntu and access from pc
+1. become super user after executing command
+>>sudo -s
+
+2. type following comands to install vncserver
+
+>>sudo apt-get install ubuntu-desktop
+>>sudo apt-get install vnc4server
+>>sudo apt-get install gnome-panel
+
+3. type command vncserver once
+
+
+5. remember password for accessing the vnc server. Kill vncserver by typing command 
+>>vncserver-kill :1
+
+6. Type vi .vnc/xstartup and modify the file
+ #!/bin/sh
+ # Uncomment the following two lines for normal desktop:
+ unset SESSION_MANAGER
+ # exec /etc/X11/xinit/xinitrc
+ gnome-session –session=gnome-classic &
+ gnome-panel&
+
+7. Press ESC, followed by :wq to save and exit the file
+
+8. Type vncserver again to start vncserver.
+
+9. Download and install tightvnc to connect remote desktop from the following link
+   http://www.tightvnc.com/download.php
+
+10. Now run tightvnc viewer
+
+11. Add the port no 5901 in your ec2 security group
+
+12. Write your public ip in remote host text box and port no.
+    publicIp::port
+
+13. Your desktop in ec2 instance is ready and execute the command vncserver after every restart.
+
+*************************************************************************************************************************
+*************************************************************************************************************************
 
 

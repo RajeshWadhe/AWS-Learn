@@ -1,0 +1,26 @@
+*****************************************************************************************************
+1. Create a EC2 Linux Ubuntu instance.
+
+2. Type following commands in command prompt:
+
+>>ls
+
+>>rm *
+
+Go to URL of github
+>>https://github.com/zillionics/setup_aws_ec2_linux_ubuntu_gui
+
+select rdp_gui.ssh file and click on it
+
+Now clck on RAW button and then copy that URL 
+
+>>-wget (paste copied address)
+ 
+>>chmod 700 *
+
+>>./rdp_gui.ssh
+
+>>enter new UNIX password:
+>>Retype new UNIX password:
+
+Now connect RDP using ec2 domain address.

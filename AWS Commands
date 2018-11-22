@@ -3,7 +3,6 @@ error at CLI
 
 aws --no-verify-ssl ec2 describe-instances
 
-
 NOW detach ec2 policy from account under IAM
 THEN  
 aws --no-verify-ssl ec2 describe-instances

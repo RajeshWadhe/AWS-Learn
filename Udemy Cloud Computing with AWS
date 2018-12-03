@@ -1,0 +1,43 @@
+
+COMPUTE AND NETWORKING:
+1) EC2
+2) Route53
+3) VPC
+
+STORAGE AND CONTENT DELIVERY
+1) S3
+2) Amazon glacier
+3) Amazon Cloudfront
+
+Database
+1) MySQL
+2) MS SQL
+3) Oracle
+
+Deployemtn and management
+1) cloudwatch
+2) IAM
+
+Application Services
+1) SES
+2) SNS
+
+____________________________________________
+
+Spot instances: search for it
+
+Build a custom AMI so that you won't need to install 
+all dependancies and softwares which were installed 
+earlier
+
+
+Right click --> instance --> make AMI
+it will take 5 to 10 min to launch
+
+then use this AMI to launch instance next instance
+with same configration
+
+
+if your AMI is in different Region and 
+you want to create a AMI in different Region
+

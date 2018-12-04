@@ -1,1 +1,285 @@
 
+aws ec2 describe-instances 
+error at CLI
+
+aws --no-verify-ssl ec2 describe-instances
+
+
+NOW detach ec2 policy from account under IAM
+THEN  
+aws --no-verify-ssl ec2 describe-instances
+unauthorized access
+
+Make IAM-> users-> security_credential
+make it INACTIVE 
+now run command-->aws --no-verify-ssl ec2 describe-instances
+unable to validate the provided access credential
+
+For S3--->
+create BUCKET--> upload FILE
+add other aws account to access
+then chekc throug CLI
+--> aws --no-verify-ssl s3 ls s3://bucket-demo-9001 --recursive
+IT should display object
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html
+
+uptime.is
+
+FILE
+AWSCLI 64
+AWS-Java-sdk-1.11.
+
+java -cp "aws-java-sdk-1.11.451.jar;." s3upload sample789 
+
+To upload java file in bucket
+//javac -cp "lib/*;." s3upload.java    ---> compile
+//java -cp "lib/*;." s3upload bucket-demo-9001 s3upload.java
+
+https://www.ec2instances.info
+
+HeidiSQL-->
+root
+Database123
+
+
+DynamoDB
+create Java File In RDP--> text Dynamodb.java
+javac -cp "lib/*;." Dynamodb.java
+java -cp "lib/*;." Dynamodb
+
+https://cloudcraft.co
+
+http://www.haproxy.org/
+
+windows+R
+inetmgr ---> local host
+
+https://calculator.s3.amazonaws.com/index.html
+
+github.com/psrpatnaik
+
+
+******************************
+CLOUD9
+
+cloud9 have access to instance within VPC
+aws ec2 describe-instances --region ap-south-1 --output table
+
+>>pwd --> present Woking directory
+
+crate new file --> touch
+>>touch s3Upload.java
+
+>>created file will be displayed
+paste java code
+
+************************************************************
+
+
+
+
+************************************************************
+-------------
+VPC
+-------------
+MYSQL ---> connect thought NAT --> DB
+enable access in private network
+
+go to VPC in dashboard
+edit inbound and outbound rules
+add more high priority rules 
+
+
+
+************************************************************
+ELB
+ 
+
+***********************************************************
+
+AWS Lambda
+
+use case
+using lambda --> upload s3 object --> and store properties to DynamoDB
+
+
+>> create a lambda -> from scratch
+>> create a IAM roles
+1)s3fullacces
+2)dynamoDBfullaccess
+3)Cloudwatchfullaccess
+4)cloudwatchfullaccessLogs
+
+>>Now select created IAM role and create lambda function
+>>Select sample
+>> TestEvent --> create event and Test it.
+
+>>Trigger --> event ---> action  (info stored in JSON object)
+ 
+>>Test Event --> then it will show you details like name, key size
+
+
+https://i7w2be6fv8.execute-api.ap-southeast-1.amazonaws.com/prod/addnumber?num1=10&num2=30
+
+sudo -i
+ cd /var/www/html
+ 
+ touch add.html
+
+ nano ad.html
+Shift + ins
+y to save
+ 
+ cat 
+ 
+ 
+ -----------------
+ sudo -i
+ cd /var/www.html
+ if no we
+ apt -get install apache
+ 
+ --------------------------
+ 
+ arn:aws:lambda:ap-southeast-1:638337668767:function:addNumberX
+ 
+ 
+ https://pm1a4fojv3.execute-api.ap-southeast-2.amazonaws.com/test/addnumberx?num1=10&num2=20
+ 
+ 
+ 
+ **************************************************************
+ 
+ Microservices
+ 
+ "Buiilding Microservices" --> book
+ 
+ 
+ 
+ ---------------------------------------------------------------
+ *********************************************************************************************
+ AWS SQS
+ *********************************************************************************************
+ INSTALL JAVA WITH APT 
+ 
+ connect to AWSCLI through Putty
+ 
+ sudo add-apt-repository ppa:webupd8team/java
+ 
+ sudo apt update
+ 
+ sudo apt install oracle-java8-installer
+ 
+ check
+ >java
+ >javac
+ 
+ Root/normal user
+ >sudo -i
+ 
+ go back to nomal user
+ >exit
+ 
+ >clear
+ 
+ where you are
+ >pwd
+ 
+ >mkdir saama-training
+ >pwd
+ 
+ >javac
+ >java
+ 
+ LINUX INSTANCE --> GIVE PROPER ROLES
+ --SUPER IAM Role
+ 
+ poweruser/adminfullaccess
+ and apply that IAM role to the Linux instance
+ 
+ 
+ >python --version
+ 
+ TO INSTALL Python 
+ >sudo apt get install python 
+ 
+ To install AWSCLI install
+ >>pip install awscli --upgrade --user
+  installed  or it prompts other command --> use it.
+  
+>>aws ec2 describe-instances --region ap-south-1 --output text
+>>aws ec2 describe-instances --region ap-south-1 --output table
+
+to find where aws installed
+>>which aws
+
+
+
+>>sudo -i
+
+find where aws installed 
+>>find / -name aws
+
+>>find ~ -name aws
+go into directory
+
+
+Now get Java SDK
+
+>>wget http://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
+
+>>unzip 
+
+>>cp aws-java-sdk-1.11.455.jar /home/ubuntu/saama-training/
+>>cd..
+>>cd..
+untill you go to saama-training directory
+
+>>ls 
+you will display all the files in the directory
+
+>>mkdir lib
+
+move jar file into folder lib
+>>mv aws-java-sdk-1.11.455.jar lib/
+>>ls lib/
+it will display files
+
+to copy third-party jar file into 'lib' folder
+
+>>cd third-party/
+>>ls
+
+now copy all files
+>>cp -a . /home/ubuntu/saama-training/lib
+>>cd lib/
+>>ls
+
+GOOGLE--> AWS JAVA SQS EXAMPL --> DELETE, INSERT LINK
+
+https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/examples-sqs-messages.html
+
+--> create a java code 
+>>touch SQSSend.java
+>>nano SQSSend.java
+>>ls
+
+>>shift+Insert
+to paSTE THE copied java cod
+
+https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/java/example_code/sqs/src/main/java/aws/example/sqs/SendReceiveMessages.java
+
+>>run java code
+
+>>javac -cp "lib/*:." SQSSend.java
+>>java -cp "lib/*:." SQSSend
+
+write END to get to back/exit
+
+Try to send and receieve messages and try to print them with print statemnt Sysout(messages)
+
+
+
+------------------------------------------------
+------------------------------------------------
